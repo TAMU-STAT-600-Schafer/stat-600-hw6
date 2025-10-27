@@ -4,23 +4,20 @@
 \alias{LRMultiClass}
 \title{Title}
 \usage{
-LRMultiClass(X, y, numIter = 50, eta = 0.1, lambda = 1, beta_init = NULL)
+LRMultiClass(X, y, beta_init = NULL, numIter = 50, eta = 0.1, lambda = 1)
 }
 \arguments{
 \item{X}{}
 
 \item{y}{}
 
+\item{beta_init}{}
+
 \item{numIter}{}
 
 \item{eta}{}
 
 \item{lambda}{}
-
-\item{beta_init}{}
-}
-\value{
-
 }
 \description{
 Title

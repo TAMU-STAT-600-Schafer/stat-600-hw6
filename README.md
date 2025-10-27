@@ -1,4 +1,4 @@
-## Homework 6 - Kmeans and Multi-logistic Rcpp with Armadillo implementation via R package
+## Homework 6 - Kmeans and Multi-logictic Rcpp with Armadillo implementation via R package
 
 # Introduction
 In this homework, you will practice basics of R package development, and the use of Rcpp Armadillo within R package based on your HWs 2 and 3. You will be working with another student on this assignment. To split the load, it is expected that you will
@@ -12,6 +12,7 @@ In this homework, you will practice basics of R package development, and the use
 4) After the first draft is complete, discuss your current code with each other, and then switch to make adjustments (to optimize the code, to add comments, to add documentation, etc). Thus, the person who did initial coding for HW2 will then switch to make adjustments/polish HW3, and vice versa.
 
 In the end, we expect to see a similar amount of commits/code from both of you with
+
 - one person doing major commits on Kmeans, and then some commits on LRmulticlass
 - another person doing major commits on LRmulticlass, and then some commits on Kmeans
 
@@ -39,7 +40,26 @@ Both of you should fill the missing information in DESCRIPTION file
 - License
 - Updated version
 
-In the end, you should have function **MyKmeans** and **LRMultiClass** that are exported to the user, and all other functions being internal. The exported functions should be documented with examples so make sure **Check** does not return warning or errors.
+In the end, you should have functionality for **MyKmeans** and **LRMultiClass** that are exported to the user, and all other functions being internal. The exported functions should be documented with examples so make sure **Check** does not return warning or errors. You may delete files for the proximal gradient descent.
+
+## Instructions for groups with 3 members
+
+In addition to the above, you will **implement the proximal gradient descent with Nesterov acceleration for LASSO** from lecture. To clarify, in your algorithm, initialize the Nesterov coefficients at 1. 
+
+In the end, you should have functionality for **MyKmeans**, **LRMultiClass**, and **LASSOstandardized_prox_Nesterov** that are exported to the user, and all other functions being internal. The exported functions should be documented with examples so make sure **Check** does not return warnings or errors. 
+
+Similarly, we expect to see a similar amount of commits/code from all three of you, with:
+
+- one person doing major commits on **MyKmeans**,  
+- another person doing major commits on **LRMultiClass**,  
+- the final person doing major commits on **LASSOstandardized_prox_Nesterov**,  
+and each person doing **some commits on at least one other component**.  
+
+For example:  
+
+- the MyKmeans lead contributes some commits to LASSOstandardized_prox_Nesterov,  
+- the LASSO leader contributes some commits to LRMultiClass,  
+- the LRMultiClass lead contributes some commits to MyKmeans.
 
 ## Grading for this assignment
 
@@ -53,7 +73,7 @@ Take advantage of the fact that you have a correct R functions to extensively te
  
  * speed _(10% of the grade)_ 
  
-You should expect to see multiple folds speed improvement from moving your code to C++. To make the assignment simpler, you will get full points if your correct C++ code is at least three folds faster than your correct R code.
+You should expect to see multiple folds speed improvement from moving your code to C++ for Kmeans and LRMulticalss. To make the assignment simpler, you will get full points if your correct C++ code is at least three folds faster than your correct R code. However, there will be nominal difference for LASSO proximal gradient descent with Nesterov acceleration and we expect run times to be similar.
 
  * **(NEW)** R package checks/documentation _(20% of the grade)_
  
@@ -65,5 +85,5 @@ You need to comment different parts of the code so it's clear what they do, have
 
 * **(NEW)** version control/commit practices in a team _(10% of the grade)_
  
- I expect you to start early on this assignment, and work gradually. You want to commit often, have logically organized commits with short description that makes sense. See guidelines on good commit practices, and posted grading rubric. Please **review Topic 1** on collaborative workflow in Github, and make sure you always **pull** changes first before you **push**.
+I expect you to start early on this assignment, and work gradually. You want to commit often, have logically organized commits with short description that makes sense. See guidelines on good commit practices, and posted grading rubric. Please **review Topic 1** on collaborative workflow in Github, and make sure you always **pull** changes first before you **push**.
  
